@@ -16,13 +16,17 @@ class Paper {
         World.add(world,this.body);
     }
 
-display() 
-{
-			push();
-			imageMode(CENTER)
-			//strokeWeight(4);
-			fill(128,128,128);
-            image(this.x,this.y,this.r,0,options);
-			pop();	
-}
+    display() 
+    { 
+        var paperpos=this.body.position; 
+        push();
+        translate(paperpos.x, paperpos.y); 
+        rectMode(CENTER) 
+        //strokeWeight(4); 
+        fill(255,0,255); 
+        imageMode(CENTER); 
+        image(this.image, 0,0,this.r, this.r); 
+        //ellipse(0,0,this.r, this.r); 
+        pop();
+    }
 }
